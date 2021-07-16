@@ -1,0 +1,34 @@
+
+
+public class Main {
+	static boolean imprime = true;
+
+	public static void main(String[] args) {
+		
+		Dispositivo sa = new Dispositivo();
+		sa.nome = "HD Samsung Douglas";
+		sa.capacidade = 500;
+		sa.capacidadeUsada = 250;
+		
+		Dispositivo sk = new Dispositivo();
+		sk.nome = "skan disk";
+		sk.capacidade = 16;
+		sk.capacidadeUsada = 5;
+		
+			
+		println("Dispositivo:....." + sa.nome + " Capacidade:....." + sa.capacidade + 
+				" Espaço livre:....." + sa.getCapacidadeRestante() + "\npos mem: " + (sa));
+		println("_____________________________________________________________________");
+		
+		println("Dispositivo:....." + sk.nome + " Capacidade:....." + sk.capacidade + 
+	            " Espaço livre:....." + sk.getCapacidadeRestante() + "\npos mem: " + (sa));
+
+	}
+	
+	static void println(String conteudo) {
+		if(imprime)
+			System.out.println(conteudo);
+		
+	}
+
+}
