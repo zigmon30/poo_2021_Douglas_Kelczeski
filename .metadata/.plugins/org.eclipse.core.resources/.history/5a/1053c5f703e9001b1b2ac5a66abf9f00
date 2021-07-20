@@ -15,7 +15,7 @@ public class Main2 {
 	static int numArquivoVideo = 0;
 	
 	public static void main(String[] args) {
-		Scanner ler = new Scanner(System.in);
+		Scanner ler = new Scanner(System.ler);
 		ler.useDelimiter("\r?\n");
 		
 		
