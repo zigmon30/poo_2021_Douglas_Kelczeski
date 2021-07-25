@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
 	static boolean imprime = true;
 	static Dispositivo[] dispositivos = new Dispositivo[999];
 	static Audio[] audios = new Audio[999];
