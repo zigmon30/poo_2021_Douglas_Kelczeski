@@ -161,23 +161,21 @@ public class Main2 {
 						Imagem img = new Imagem();
 						println("Nome do Arquivo de Imagem: ");
 						img.nome = ler.next();
-						
-						imagens.add(img);
-						
 						println("Formato: ");
 						img.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						img.tamanho = ler.nextDouble();
 						println("Arquivo de imagem convertido para formato .jpg disponivel pelo gerenciador de arquivo : ");
 					
-						
+						imagens[numArquivoImagem] = img;
+						numArquivoImagem++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < imagens.size(); indexDis++){
-							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).nome + 
-									" Formato...=> "  + imagens.get(indexDis).getFormatarImagem() + " Tamanho do arquivo...=> " +
-									+ imagens.get(indexDis).tamanho
+						for(int indexDis = 0; indexDis < numArquivoImagem; indexDis++){
+							println("Imagem[" + indexDis + "]: " + imagens[indexDis].nome + 
+									" Formato...=> "  + imagens[indexDis].getFormatarImagem() + " Tamanho do arquivo...=> " +
+									+ imagens[indexDis].tamanho
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -202,23 +200,21 @@ public class Main2 {
 						Video vid = new Video();
 						println("Nome do Arquivo de Video: ");
 						vid.nome = ler.next();
-						
-						videos.add(vid);
-						
 						println("Formato: ");
 						vid.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						vid.tamanho = ler.nextDouble();
 						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
 					
-					
+						videos[numArquivoVideo] = vid;
+						numArquivoVideo++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < videos.size(); indexDis++){
-							println("Video[" + indexDis + "]: " + videos.get(indexDis).nome + 
-									" Formato...=> "  + videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> " +
-									+ videos.get(indexDis).tamanho
+						for(int indexDis = 0; indexDis < numArquivoVideo; indexDis++){
+							println("Video[" + indexDis + "]: " + videos[indexDis].nome + 
+									" Formato...=> "  + videos[indexDis].getFormatarVideo() + " Tamanho do arquivo...=> " +
+									+ videos[indexDis].tamanho
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}

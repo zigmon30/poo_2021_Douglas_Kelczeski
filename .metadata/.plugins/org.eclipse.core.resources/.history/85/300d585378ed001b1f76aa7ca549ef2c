@@ -2,13 +2,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main2 {
-	static boolean imprime = true;                                                                 //################################################
+	static boolean imprime = true;
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
-	static ArrayList<Audio> audios = new ArrayList<Audio>();                                       //LISTAS DINAMICAS COM ARRAYLIST
-	static ArrayList<Documento> textos = new ArrayList<Documento>();
-	static ArrayList<Imagem> imagens = new ArrayList<Imagem>();
-	static ArrayList<Video> videos = new ArrayList<Video>();                                      //################################################
-
+	static Audio[] audios = new Audio[999];
+	static Documento[] textos = new Documento[999];
+	static Imagem[] imagens = new Imagem[999];
+	static Video[] videos = new Video[999];
+	
+	
+	static int numArquivoAudio = 0;
+	static int numDocumentoTexto = 0;
+	static int numArquivoImagem = 0;
+	static int numArquivoVideo = 0;
 	
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
@@ -39,22 +44,20 @@ public class Main2 {
 						Dispositivo dis = new Dispositivo();
 						println("Nome do dispositivo de armazenamento: ");
 						dis.nome = ler.next();
-						
-						dispositivos.add(dis);
-						
 						println("Capacidade do dispositivo de armazenamento: ");
 						dis.capacidade = ler.nextDouble();
 						println("Capacidade utilizada do dispositivo de armazenamento: ");
 						dis.capacidadeUsada = ler.nextDouble();
 					
-						
+						dispositivos[numDispositivo] = dis;
+						numDispositivo++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < dispositivos.size(); indexDis++){
-							println("Dispositivo[" + indexDis + "]: " + dispositivos.get(indexDis).nome + 
-									" Capacidade...=> " + dispositivos.get(indexDis).capacidade + " Memoria usada...=> " +
-									+ dispositivos.get(indexDis).capacidadeUsada + " Capacidade restante...=>" + dispositivos.get(indexDis).getCapacidadeRestante()
+						for(int indexDis = 0; indexDis < numDispositivo; indexDis++){
+							println("Dispositivo[" + indexDis + "]: " + dispositivos[indexDis].nome + 
+									" Capacidade...=> " + dispositivos[indexDis].capacidade + " Memoria usada...=> " +
+									+ dispositivos[indexDis].capacidadeUsada + " Capacidade restante...=>" + dispositivos[indexDis].getCapacidadeRestante()
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -80,22 +83,21 @@ public class Main2 {
 						Audio aud = new Audio();
 						println("Nome do Arquivo de Audio: ");
 						aud.nome = ler.next();
-						
-						audios.add(aud);
-						
 						println("Formato: ");
 						aud.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						aud.tamanho = ler.nextDouble();
 						println("Arquivo de Audio convertido para formato .mp3 disponivel pelo gerenciador de arquivo : ");
 					
+						audios[numArquivoAudio] = aud;
+						numArquivoAudio++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < audios.size(); indexDis++){
-							println("Audio[" + indexDis + "]: " + audios.get(indexDis).nome + 
-									" Formato...=> "  + audios.get(indexDis).getFormatarAudio() + " Tamanho do arquivo...=> " +
-									+ audios.get(indexDis).tamanho
+						for(int indexDis = 0; indexDis < numArquivoAudio; indexDis++){
+							println("Audio[" + indexDis + "]: " + audios[indexDis].nome + 
+									" Formato...=> "  + audios[indexDis].getFormatarAudio() + " Tamanho do arquivo...=> " +
+									+ audios[indexDis].tamanho
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -121,22 +123,21 @@ public class Main2 {
 						Documento doc = new Documento();
 						println("Nome do Arquivo de Texto: ");
 						doc.nome = ler.next();
-						
-						textos.add(doc);
-						
 						println("Formato: ");
 						doc.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						doc.tamanho = ler.nextDouble();
 						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
 					
+						textos[numDocumentoTexto] = doc;
+						numDocumentoTexto++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < textos.size(); indexDis++){
-							println("Arquivo[" + indexDis + "]: " + textos.get(indexDis).nome + 
-									" Formato...=> "  + textos.get(indexDis).getFormatarDocumento() + " Tamanho do arquivo...=> " +
-									+ textos.get(indexDis).tamanho
+						for(int indexDis = 0; indexDis < numDocumentoTexto; indexDis++){
+							println("Arquivo[" + indexDis + "]: " + textos[indexDis].nome + 
+									" Formato...=> "  + textos[indexDis].getFormatarDocumento() + " Tamanho do arquivo...=> " +
+									+ textos[indexDis].tamanho
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -161,23 +162,21 @@ public class Main2 {
 						Imagem img = new Imagem();
 						println("Nome do Arquivo de Imagem: ");
 						img.nome = ler.next();
-						
-						imagens.add(img);
-						
 						println("Formato: ");
 						img.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						img.tamanho = ler.nextDouble();
 						println("Arquivo de imagem convertido para formato .jpg disponivel pelo gerenciador de arquivo : ");
 					
-						
+						imagens[numArquivoImagem] = img;
+						numArquivoImagem++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < imagens.size(); indexDis++){
-							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).nome + 
-									" Formato...=> "  + imagens.get(indexDis).getFormatarImagem() + " Tamanho do arquivo...=> " +
-									+ imagens.get(indexDis).tamanho
+						for(int indexDis = 0; indexDis < numArquivoImagem; indexDis++){
+							println("Imagem[" + indexDis + "]: " + imagens[indexDis].nome + 
+									" Formato...=> "  + imagens[indexDis].getFormatarImagem() + " Tamanho do arquivo...=> " +
+									+ imagens[indexDis].tamanho
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -202,23 +201,21 @@ public class Main2 {
 						Video vid = new Video();
 						println("Nome do Arquivo de Video: ");
 						vid.nome = ler.next();
-						
-						videos.add(vid);
-						
 						println("Formato: ");
 						vid.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						vid.tamanho = ler.nextDouble();
 						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
 					
-					
+						videos[numArquivoVideo] = vid;
+						numArquivoVideo++;
 					}
 					
 					if(opecaoDis == 2) {
-						for(int indexDis = 0; indexDis < videos.size(); indexDis++){
-							println("Video[" + indexDis + "]: " + videos.get(indexDis).nome + 
-									" Formato...=> "  + videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> " +
-									+ videos.get(indexDis).tamanho
+						for(int indexDis = 0; indexDis < numArquivoVideo; indexDis++){
+							println("Video[" + indexDis + "]: " + videos[indexDis].nome + 
+									" Formato...=> "  + videos[indexDis].getFormatarVideo() + " Tamanho do arquivo...=> " +
+									+ videos[indexDis].tamanho
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
