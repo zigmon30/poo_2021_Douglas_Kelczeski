@@ -253,6 +253,8 @@ public class Main2 {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um dispositivo de armazenamento");
 		println("(2) para listar os dispositivos atualmente no sistema");
+		println("(4) para editar nome de disposito");
+		println("(5) para excluir dispositivos atualmente no sistema");
 		println("Digite sua opção:");
 	}
 	
@@ -262,6 +264,8 @@ public class Main2 {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um aquivo de audio");
 		println("(2) para listar os arquivos de audio atualmente no sistema");
+		println("(4) para editar nome de audio");
+		println("(5) para excluir audio atualmente no sistema");
 		println("Digite sua opção:");
 	}
 	
@@ -272,6 +276,8 @@ public class Main2 {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um documento");
 		println("(2) para listar os documentos atualmente no sistema");
+		println("(4) para editar nome de arquivo .txt");
+		println("(5) para excluir arquivo .txt atualmente no sistema");
 		println("Digite sua opção:");
 	}
 	
@@ -281,6 +287,8 @@ public class Main2 {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir uma imagem");
 		println("(2) para listar as imagens atualmente no sistema");
+		println("(4) para editar nome da imagem");
+		println("(5) para excluir imagem atualmente no sistema");
 		println("Digite sua opção:");
 	}
 	
@@ -290,6 +298,8 @@ public class Main2 {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um novo video");
 		println("(2) para listar os videos atualmente no sistema");
+		println("(4) para editar nome do video");
+		println("(5) para excluir video atualmente no sistema");
 		println("Digite sua opção:");
 	}
 	
