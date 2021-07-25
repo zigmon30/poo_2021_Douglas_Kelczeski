@@ -202,7 +202,7 @@ public class Main2 {
 						vid.formato = ler.next();
 						println("Tamanho Arquivo: ");
 						vid.tamanho = ler.nextDouble();
-						println("Arquivo de video convertido para formato .mkv disponivel pelo gerenciador de arquivo : ");
+						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
 					
 						videos[numArquivoVideo] = vid;
 						numArquivoVideo++;
