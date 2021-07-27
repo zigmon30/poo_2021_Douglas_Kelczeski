@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
 	static boolean imprime = true; // ################################################
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
@@ -34,41 +34,37 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-
+						Dispositivo dis = new Dispositivo();
 						println("Nome do dispositivo de armazenamento: ");
-						String nome = ler.next();
-
-						println("Capacidade do dispositivo de armazenamento: ");
-						double capacidade = ler.nextDouble();
-						println("Capacidade utilizada do dispositivo de armazenamento: ");
-						double capacidadeUsada = ler.nextDouble();
-						Dispositivo dis = new Dispositivo(nome, capacidade, capacidadeUsada);
+						dis.nome = ler.next();
 
 						dispositivos.add(dis);
+
+						println("Capacidade do dispositivo de armazenamento: ");
+						dis.capacidade = ler.nextDouble();
+						println("Capacidade utilizada do dispositivo de armazenamento: ");
+						dis.capacidadeUsada = ler.nextDouble();
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < dispositivos.size(); indexDis++) {
-							println("Dispositivo[" + indexDis + "]: " + dispositivos.get(indexDis).getNome()
-									+ " Capacidade...=> " + dispositivos.get(indexDis).getCapacidade()
-									+ " Memoria usada...=> " + +dispositivos.get(indexDis).getCapacidadeUsada()
+							println("Dispositivo[" + indexDis + "]: " + dispositivos.get(indexDis).nome
+									+ " Capacidade...=> " + dispositivos.get(indexDis).capacidade
+									+ " Memoria usada...=> " + +dispositivos.get(indexDis).capacidadeUsada
 									+ " Capacidade restante...=>" + dispositivos.get(indexDis).getCapacidadeRestante()
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
-
+					
 					if (opecaoDis == 3) {
 						println("Para alterar nome  do dispositivo digite o seu id ");
 						int indexDis = ler.nextInt();
 
 						if (indexDis < dispositivos.size()) {
-							Dispositivo dis = dispositivos.get(indexDis);
-							println("NDigite um novo nome para: " + dis.getNome() + "?");
-							String nome = ler.next();
-							dis.setNome(nome);
-							println("Nome alterado com sucesso");
+							dispositivos.remove(indexDis);
+							println("Dispositivo  removido com sucesso");
 						} else {
 							println("Indice não encontrado");
 						}

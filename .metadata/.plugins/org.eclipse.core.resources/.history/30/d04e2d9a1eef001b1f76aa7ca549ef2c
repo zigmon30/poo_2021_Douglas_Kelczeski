@@ -10,8 +10,6 @@ public class Dispositivo {
 		this.capacidade = capacidade;
 		this.capacidadeUsada = capacidadeUsada;
 	}
-	
-	
 
 // metodos get e set
 

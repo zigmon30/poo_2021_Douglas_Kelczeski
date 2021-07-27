@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
 	static boolean imprime = true; // ################################################
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
@@ -34,25 +34,24 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-
+						Dispositivo dis = new Dispositivo();
 						println("Nome do dispositivo de armazenamento: ");
-						String nome = ler.next();
-
-						println("Capacidade do dispositivo de armazenamento: ");
-						double capacidade = ler.nextDouble();
-						println("Capacidade utilizada do dispositivo de armazenamento: ");
-						double capacidadeUsada = ler.nextDouble();
-						Dispositivo dis = new Dispositivo(nome, capacidade, capacidadeUsada);
+						dis.nome = ler.next();
 
 						dispositivos.add(dis);
+
+						println("Capacidade do dispositivo de armazenamento: ");
+						dis.capacidade = ler.nextDouble();
+						println("Capacidade utilizada do dispositivo de armazenamento: ");
+						dis.capacidadeUsada = ler.nextDouble();
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < dispositivos.size(); indexDis++) {
-							println("Dispositivo[" + indexDis + "]: " + dispositivos.get(indexDis).getNome()
-									+ " Capacidade...=> " + dispositivos.get(indexDis).getCapacidade()
-									+ " Memoria usada...=> " + +dispositivos.get(indexDis).getCapacidadeUsada()
+							println("Dispositivo[" + indexDis + "]: " + dispositivos.get(indexDis).nome
+									+ " Capacidade...=> " + dispositivos.get(indexDis).capacidade
+									+ " Memoria usada...=> " + +dispositivos.get(indexDis).capacidadeUsada
 									+ " Capacidade restante...=>" + dispositivos.get(indexDis).getCapacidadeRestante()
 									+ "\n");
 							println("------------------------------------------------------------------");
@@ -60,22 +59,6 @@ public class Main {
 					}
 
 					if (opecaoDis == 3) {
-						println("Para alterar nome  do dispositivo digite o seu id ");
-						int indexDis = ler.nextInt();
-
-						if (indexDis < dispositivos.size()) {
-							Dispositivo dis = dispositivos.get(indexDis);
-							println("NDigite um novo nome para: " + dis.getNome() + "?");
-							String nome = ler.next();
-							dis.setNome(nome);
-							println("Nome alterado com sucesso");
-						} else {
-							println("Indice não encontrado");
-						}
-
-					}
-
-					if (opecaoDis == 4) {
 						println("Digite o id do dispositivo para ser removido");
 						int indexDis = ler.nextInt();
 
@@ -268,8 +251,8 @@ public class Main {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um dispositivo de armazenamento");
 		println("(2) para listar os dispositivos atualmente no sistema");
-		println("(3) para editar nome de disposito");
-		println("(4) para excluir dispositivos atualmente no sistema");
+		println("(4) para editar nome de disposito");
+		println("(5) para excluir dispositivos atualmente no sistema");
 		println("Digite sua opção:");
 	}
 
@@ -279,8 +262,8 @@ public class Main {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um aquivo de audio");
 		println("(2) para listar os arquivos de audio atualmente no sistema");
-		println("(3) para editar nome de audio");
-		println("(4) para excluir audio atualmente no sistema");
+		println("(4) para editar nome de audio");
+		println("(5) para excluir audio atualmente no sistema");
 		println("Digite sua opção:");
 	}
 
@@ -290,8 +273,8 @@ public class Main {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um documento");
 		println("(2) para listar os documentos atualmente no sistema");
-		println("(3) para editar nome de arquivo .txt");
-		println("(4) para excluir arquivo .txt atualmente no sistema");
+		println("(4) para editar nome de arquivo .txt");
+		println("(5) para excluir arquivo .txt atualmente no sistema");
 		println("Digite sua opção:");
 	}
 
@@ -301,8 +284,8 @@ public class Main {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir uma imagem");
 		println("(2) para listar as imagens atualmente no sistema");
-		println("(3) para editar nome da imagem");
-		println("(4) para excluir imagem atualmente no sistema");
+		println("(4) para editar nome da imagem");
+		println("(5) para excluir imagem atualmente no sistema");
 		println("Digite sua opção:");
 	}
 
@@ -312,8 +295,8 @@ public class Main {
 		println("(0) para Voltar ao Menu Principal");
 		println("(1) para inserir um novo video");
 		println("(2) para listar os videos atualmente no sistema");
-		println("(3) para editar nome do video");
-		println("(4) para excluir video atualmente no sistema");
+		println("(4) para editar nome do video");
+		println("(5) para excluir video atualmente no sistema");
 		println("Digite sua opção:");
 	}
 

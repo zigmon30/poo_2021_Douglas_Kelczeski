@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
 	static boolean imprime = true; // ################################################
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
@@ -34,9 +34,11 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-
+						
 						println("Nome do dispositivo de armazenamento: ");
 						String nome = ler.next();
+
+						
 
 						println("Capacidade do dispositivo de armazenamento: ");
 						double capacidade = ler.nextDouble();
@@ -44,6 +46,7 @@ public class Main {
 						double capacidadeUsada = ler.nextDouble();
 						Dispositivo dis = new Dispositivo(nome, capacidade, capacidadeUsada);
 
+						
 						dispositivos.add(dis);
 
 					}
@@ -58,20 +61,22 @@ public class Main {
 							println("------------------------------------------------------------------");
 						}
 					}
-
+					
 					if (opecaoDis == 3) {
 						println("Para alterar nome  do dispositivo digite o seu id ");
 						int indexDis = ler.nextInt();
-
+						
 						if (indexDis < dispositivos.size()) {
 							Dispositivo dis = dispositivos.get(indexDis);
-							println("NDigite um novo nome para: " + dis.getNome() + "?");
+							println("Novo nome do dispositivo de armazenamento" + dis.getNome() + "?");
 							String nome = ler.next();
 							dis.setNome(nome);
 							println("Nome alterado com sucesso");
-						} else {
+						} else {  
 							println("Indice não encontrado");
 						}
+
+						
 
 					}
 
@@ -82,7 +87,7 @@ public class Main {
 						if (indexDis < dispositivos.size()) {
 							dispositivos.remove(indexDis);
 							println("Dispositivo  removido com sucesso");
-						} else {
+						} else {  
 							println("Indice não encontrado");
 						}
 
