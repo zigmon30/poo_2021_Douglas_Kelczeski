@@ -33,7 +33,6 @@ public class Audio {
 
 	public void setTamanho(double tamanho) {
 		if(tamanho <=0)
-			
 			return;
 		this.tamanho = tamanho;
 	}

@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-	static boolean imprime = true;                                              // ################################################
+	static boolean imprime = true; // ################################################
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
-	static ArrayList<Audio> audios = new ArrayList<Audio>();                   // LISTAS DINAMICAS COM ARRAYLIST
+	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
 	static ArrayList<Documento> textos = new ArrayList<Documento>();
 	static ArrayList<Imagem> imagens = new ArrayList<Imagem>();
-	static ArrayList<Video> videos = new ArrayList<Video>();                   // ################################################
+	static ArrayList<Video> videos = new ArrayList<Video>(); // ################################################
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
@@ -65,7 +65,7 @@ public class Main {
 
 						if (indexDis < dispositivos.size()) {
 							Dispositivo dis = dispositivos.get(indexDis);
-							println("Digite um novo nome para: " + dis.getNome() + "?");
+							println("NDigite um novo nome para: " + dis.getNome() + "?");
 							String nome = ler.next();
 							dis.setNome(nome);
 							println("Nome alterado com sucesso");
