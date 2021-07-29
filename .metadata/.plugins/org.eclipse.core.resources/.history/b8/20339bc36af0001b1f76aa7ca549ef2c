@@ -302,57 +302,27 @@ public class Main2 {
 					}
 
 					if (opecaoDis == 1) {
-
-						println("Nome do arquivo  de video: ");
-						String nome = ler.next();
-
-						println("Formato do arquivo: ");
-						String formato = ler.next();
-						println("tamanho do arquivo: ");
-						double tamanho = ler.nextDouble();
-						Video vid = new Video(nome, formato, tamanho);
+						Video vid = new Video();
+						println("Nome do Arquivo de Video: ");
+						vid.nome = ler.next();
 
 						videos.add(vid);
-						println("Arquivo  de video adicionado com sucesso: ");
+
+						println("Formato: ");
+						vid.formato = ler.next();
+						println("Tamanho Arquivo: ");
+						vid.tamanho = ler.nextDouble();
+						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
-							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
+							println("Video[" + indexDis + "]: " + videos.get(indexDis).nome + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + "\n");
+									+ +videos.get(indexDis).tamanho + "\n");
 							println("------------------------------------------------------------------");
 						}
-					}
-					
-					if (opecaoDis == 3) {
-						println("Para alterar nome  do arquivo de video digite o seu id ");
-						int indexTex = ler.nextInt();
-
-						if (indexTex < videos.size()) {
-							Video vid = videos.get(indexTex);
-							println("Digite um novo nome para: " + vid.getNome() + "?");
-							String nome = ler.next();
-							vid.setNome(nome);
-							println("Nome do documento de video alterado com sucesso");
-						} else {
-							println("Indice do video não encontrado");
-						}
-
-					}
-
-					if (opecaoDis == 4) {
-						println("Digite o id do video para ser removido");
-						int indexVid= ler.nextInt();
-
-						if (indexVid < videos.size()) {
-							videos.remove(indexVid);
-							println("Arquivo de video  removido com sucesso");
-						} else {
-							println("Indice do video não encontrado");
-						}
-
 					}
 
 				}

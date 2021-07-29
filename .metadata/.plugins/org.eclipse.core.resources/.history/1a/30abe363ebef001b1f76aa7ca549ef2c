@@ -1,6 +1,5 @@
-
+// atributos da classe
 public class Dispositivo {
-	// atributos da classe
 	private String nome;
 	private double capacidade;
 	private double capacidadeUsada;

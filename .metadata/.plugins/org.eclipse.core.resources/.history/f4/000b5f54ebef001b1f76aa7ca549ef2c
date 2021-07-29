@@ -1,24 +1,24 @@
 
 public class Dispositivo {
-	// atributos da classe
 	private String nome;
-	private double capacidade;
+	private double capacidade;                                                    // atributos da classe
 	private double capacidadeUsada;
 
-	// metodo construtor
 	public Dispositivo(String nome, double capacidade, double capacidadeUsada) {
 		super();
-		this.nome = nome;
+		this.nome = nome;                                                         // metodo construtor
 		this.capacidade = capacidade;
 		this.capacidadeUsada = capacidadeUsada;
 	}
+	
+	
 
-	// Comportamento da classe
+// metodos get e set
+
 	public double getCapacidadeRestante() {
-		return capacidade - capacidadeUsada;
+		return capacidade - capacidadeUsada;                                      // Comportamento da classe
 	}
 
-	// metodos get e set
 	public String getNome() {
 		return nome;
 	}

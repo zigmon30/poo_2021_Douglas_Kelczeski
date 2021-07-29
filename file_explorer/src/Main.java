@@ -103,27 +103,56 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-						Audio aud = new Audio();
-						println("Nome do Arquivo de Audio: ");
-						aud.nome = ler.next();
+
+						println("Nome do arquivo  de musica: ");
+						String nome = ler.next();
+
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						Audio aud = new Audio(nome, formato, tamanho);
 
 						audios.add(aud);
-
-						println("Formato: ");
-						aud.formato = ler.next();
-						println("Tamanho Arquivo: ");
-						aud.tamanho = ler.nextDouble();
-						println("Arquivo de Audio convertido para formato .mp3 disponivel pelo gerenciador de arquivo : ");
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < audios.size(); indexDis++) {
-							println("Audio[" + indexDis + "]: " + audios.get(indexDis).nome + " Formato...=> "
+							println("Audio[" + indexDis + "]: " + audios.get(indexDis).getNome() + " Formato...=> "
 									+ audios.get(indexDis).getFormatarAudio() + " Tamanho do arquivo...=> "
-									+ +audios.get(indexDis).tamanho + "\n");
+									+ +audios.get(indexDis).getTamanho() + "\n");
 							println("------------------------------------------------------------------");
 						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do audio digite o seu id ");
+						int indexAud = ler.nextInt();
+
+						if (indexAud < audios.size()) {
+							Audio aud = audios.get(indexAud);
+							println("Digite um novo nome para: " + aud.getNome() + "?");
+							String nome = ler.next();
+							aud.setNome(nome);
+							println("Nome alterado com sucesso");
+						} else {
+							println("Indice não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id do dispositivo para ser removido");
+						int indexAud = ler.nextInt();
+
+						if (indexAud < audios.size()) {
+							audios.remove(indexAud);
+							println("Arquivo de audio  removido com sucesso");
+						} else {
+							println("Indice de audio não encontrado");
+						}
+
 					}
 
 				}
@@ -141,27 +170,56 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-						Documento doc = new Documento();
-						println("Nome do Arquivo de Texto: ");
-						doc.nome = ler.next();
 
-						textos.add(doc);
+						println("Nome do arquivo  de texto: ");
+						String nome = ler.next();
 
-						println("Formato: ");
-						doc.formato = ler.next();
-						println("Tamanho Arquivo: ");
-						doc.tamanho = ler.nextDouble();
-						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						Documento aud = new Documento(nome, formato, tamanho);
+
+						textos.add(aud);
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < textos.size(); indexDis++) {
-							println("Arquivo[" + indexDis + "]: " + textos.get(indexDis).nome + " Formato...=> "
+							println("Documento[" + indexDis + "]: " + textos.get(indexDis).getNome() + " Formato...=> "
 									+ textos.get(indexDis).getFormatarDocumento() + " Tamanho do arquivo...=> "
-									+ +textos.get(indexDis).tamanho + "\n");
+									+ +textos.get(indexDis).getTamanho() + "\n");
 							println("------------------------------------------------------------------");
 						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do arquivo de texto digite o seu id ");
+						int indexTex = ler.nextInt();
+
+						if (indexTex < textos.size()) {
+							Documento doc = textos.get(indexTex);
+							println("Digite um novo nome para: " + doc.getNome() + "?");
+							String nome = ler.next();
+							doc.setNome(nome);
+							println("Nome do documento de texto alterado com sucesso");
+						} else {
+							println("Indice do documento não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id do dispositivo para ser removido");
+						int indexTxt = ler.nextInt();
+
+						if (indexTxt < textos.size()) {
+							textos.remove(indexTxt);
+							println("Arquivo de texto  removido com sucesso");
+						} else {
+							println("Indice de texto não encontrado");
+						}
+
 					}
 
 				}
@@ -178,27 +236,56 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-						Imagem img = new Imagem();
-						println("Nome do Arquivo de Imagem: ");
-						img.nome = ler.next();
+
+						println("Nome do arquivo  de imagem: ");
+						String nome = ler.next();
+
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						Imagem img = new Imagem(nome, formato, tamanho);
 
 						imagens.add(img);
-
-						println("Formato: ");
-						img.formato = ler.next();
-						println("Tamanho Arquivo: ");
-						img.tamanho = ler.nextDouble();
-						println("Arquivo de imagem convertido para formato .jpg disponivel pelo gerenciador de arquivo : ");
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < imagens.size(); indexDis++) {
-							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).nome + " Formato...=> "
+							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).getNome() + " Formato...=> "
 									+ imagens.get(indexDis).getFormatarImagem() + " Tamanho do arquivo...=> "
-									+ +imagens.get(indexDis).tamanho + "\n");
+									+ +imagens.get(indexDis).getTamanho() + "\n");
 							println("------------------------------------------------------------------");
 						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do arquivo de imagem digite o seu id ");
+						int indexImg = ler.nextInt();
+
+						if (indexImg < imagens.size()) {
+							Imagem img = imagens.get(indexImg);
+							println("Digite um novo nome para: " + img.getNome() + "?");
+							String nome = ler.next();
+							img.setNome(nome);
+							println("Nome do documento de imagem alterado com sucesso");
+						} else {
+							println("Indice da imagem não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id da imagem para ser removido");
+						int indexImg = ler.nextInt();
+
+						if (indexImg < imagens.size()) {
+							imagens.remove(indexImg);
+							println("Arquivo de imagem  removido com sucesso");
+						} else {
+							println("Indice de imagem não encontrado");
+						}
+
 					}
 
 				}
@@ -215,27 +302,57 @@ public class Main {
 					}
 
 					if (opecaoDis == 1) {
-						Video vid = new Video();
-						println("Nome do Arquivo de Video: ");
-						vid.nome = ler.next();
+
+						println("Nome do arquivo  de video: ");
+						String nome = ler.next();
+
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						Video vid = new Video(nome, formato, tamanho);
 
 						videos.add(vid);
-
-						println("Formato: ");
-						vid.formato = ler.next();
-						println("Tamanho Arquivo: ");
-						vid.tamanho = ler.nextDouble();
-						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
+						println("Arquivo  de video adicionado com sucesso: ");
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
-							println("Video[" + indexDis + "]: " + videos.get(indexDis).nome + " Formato...=> "
+							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).tamanho + "\n");
+									+ +videos.get(indexDis).getTamanho() + "\n");
 							println("------------------------------------------------------------------");
 						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do arquivo de video digite o seu id ");
+						int indexTex = ler.nextInt();
+
+						if (indexTex < videos.size()) {
+							Video vid = videos.get(indexTex);
+							println("Digite um novo nome para: " + vid.getNome() + "?");
+							String nome = ler.next();
+							vid.setNome(nome);
+							println("Nome do documento de video alterado com sucesso");
+						} else {
+							println("Indice do video não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id do video para ser removido");
+						int indexVid = ler.nextInt();
+
+						if (indexVid < videos.size()) {
+							videos.remove(indexVid);
+							println("Arquivo de video  removido com sucesso");
+						} else {
+							println("Indice do video não encontrado");
+						}
+
 					}
 
 				}

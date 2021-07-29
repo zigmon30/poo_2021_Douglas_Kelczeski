@@ -1,10 +1,12 @@
 
-public class Documento {
+public class Imagem {
 	private String nome;
-	private String formato;
-	private double tamanho;
+	String formato;
+	double tamanho;
 
-	public Documento(String nome, String formato, double tamanho) {
+	// metodo construtor
+
+	public Imagem(String nome, String formato, double tamanho) {
 		super();
 		this.nome = nome;
 		this.formato = formato;
@@ -35,7 +37,9 @@ public class Documento {
 		this.tamanho = tamanho;
 	}
 
-	String getFormatarDocumento() {
-		return formato = ".txt";
+	// comportamento da classe
+	public String getFormatarImagem() {
+		// TODO Auto-generated method stub
+		return formato = ".jpg";
 	}
 }

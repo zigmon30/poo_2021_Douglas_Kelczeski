@@ -1,10 +1,10 @@
 
-public class Documento {
+public class Audio {
 	private String nome;
 	private String formato;
 	private double tamanho;
-
-	public Documento(String nome, String formato, double tamanho) {
+	
+	public Audio(String nome, String formato, double tamanho) {
 		super();
 		this.nome = nome;
 		this.formato = formato;
@@ -35,7 +35,7 @@ public class Documento {
 		this.tamanho = tamanho;
 	}
 
-	String getFormatarDocumento() {
-		return formato = ".txt";
+	String getFormatarAudio() {
+		return  formato = ".mp3";
 	}
 }

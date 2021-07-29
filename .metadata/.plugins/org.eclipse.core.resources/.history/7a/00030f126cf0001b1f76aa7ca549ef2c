@@ -303,54 +303,53 @@ public class Main2 {
 
 					if (opecaoDis == 1) {
 
-						println("Nome do arquivo  de video: ");
+						println("Nome do arquivo  de texto: ");
 						String nome = ler.next();
 
 						println("Formato do arquivo: ");
 						String formato = ler.next();
 						println("tamanho do arquivo: ");
 						double tamanho = ler.nextDouble();
-						Video vid = new Video(nome, formato, tamanho);
+						Documento aud = new Documento(nome, formato, tamanho);
 
-						videos.add(vid);
-						println("Arquivo  de video adicionado com sucesso: ");
+						textos.add(aud);
 
 					}
 
 					if (opecaoDis == 2) {
-						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
-							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
-									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + "\n");
+						for (int indexDis = 0; indexDis < textos.size(); indexDis++) {
+							println("Documento[" + indexDis + "]: " + textos.get(indexDis).getNome() + " Formato...=> "
+									+ textos.get(indexDis).getFormatarDocumento() + " Tamanho do arquivo...=> "
+									+ +textos.get(indexDis).getTamanho() + "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
 					
 					if (opecaoDis == 3) {
-						println("Para alterar nome  do arquivo de video digite o seu id ");
+						println("Para alterar nome  do arquivo de texto digite o seu id ");
 						int indexTex = ler.nextInt();
 
-						if (indexTex < videos.size()) {
-							Video vid = videos.get(indexTex);
-							println("Digite um novo nome para: " + vid.getNome() + "?");
+						if (indexTex < textos.size()) {
+							Documento doc = textos.get(indexTex);
+							println("Digite um novo nome para: " + doc.getNome() + "?");
 							String nome = ler.next();
-							vid.setNome(nome);
-							println("Nome do documento de video alterado com sucesso");
+							doc.setNome(nome);
+							println("Nome do documento de texto alterado com sucesso");
 						} else {
-							println("Indice do video não encontrado");
+							println("Indice do documento não encontrado");
 						}
 
 					}
 
 					if (opecaoDis == 4) {
-						println("Digite o id do video para ser removido");
-						int indexVid= ler.nextInt();
+						println("Digite o id do dispositivo para ser removido");
+						int indexTxt = ler.nextInt();
 
-						if (indexVid < videos.size()) {
-							videos.remove(indexVid);
-							println("Arquivo de video  removido com sucesso");
+						if (indexTxt < textos.size()) {
+							textos.remove(indexTxt);
+							println("Arquivo de texto  removido com sucesso");
 						} else {
-							println("Indice do video não encontrado");
+							println("Indice de texto não encontrado");
 						}
 
 					}

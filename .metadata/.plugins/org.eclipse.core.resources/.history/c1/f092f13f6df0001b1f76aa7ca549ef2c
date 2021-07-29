@@ -343,14 +343,14 @@ public class Main2 {
 					}
 
 					if (opecaoDis == 4) {
-						println("Digite o id do video para ser removido");
-						int indexVid= ler.nextInt();
+						println("Digite o id da imagem para ser removido");
+						int indexImg = ler.nextInt();
 
-						if (indexVid < videos.size()) {
-							videos.remove(indexVid);
-							println("Arquivo de video  removido com sucesso");
+						if (indexImg < imagens.size()) {
+							textos.remove(indexImg);
+							println("Arquivo de imagem  removido com sucesso");
 						} else {
-							println("Indice do video não encontrado");
+							println("Indice de imagem não encontrado");
 						}
 
 					}

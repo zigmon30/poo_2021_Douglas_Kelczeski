@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main2 {
+public class Main {
 	static boolean imprime = true; // ################################################
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
@@ -125,7 +125,7 @@ public class Main2 {
 							println("------------------------------------------------------------------");
 						}
 					}
-
+					
 					if (opecaoDis == 3) {
 						println("Para alterar nome  do audio digite o seu id ");
 						int indexAud = ler.nextInt();
@@ -164,7 +164,7 @@ public class Main2 {
 					menuDocumentoDeTexto();
 
 					int opecaoDis = ler.nextInt();
-
+					
 					if (opecaoDis == 0) {
 						break;
 					}
@@ -192,7 +192,7 @@ public class Main2 {
 							println("------------------------------------------------------------------");
 						}
 					}
-
+					
 					if (opecaoDis == 3) {
 						println("Para alterar nome  do arquivo de texto digite o seu id ");
 						int indexTex = ler.nextInt();
@@ -236,56 +236,27 @@ public class Main2 {
 					}
 
 					if (opecaoDis == 1) {
-
-						println("Nome do arquivo  de imagem: ");
-						String nome = ler.next();
-
-						println("Formato do arquivo: ");
-						String formato = ler.next();
-						println("tamanho do arquivo: ");
-						double tamanho = ler.nextDouble();
-						Imagem img = new Imagem(nome, formato, tamanho);
+						Imagem img = new Imagem();
+						println("Nome do Arquivo de Imagem: ");
+						img.nome = ler.next();
 
 						imagens.add(img);
+
+						println("Formato: ");
+						img.formato = ler.next();
+						println("Tamanho Arquivo: ");
+						img.tamanho = ler.nextDouble();
+						println("Arquivo de imagem convertido para formato .jpg disponivel pelo gerenciador de arquivo : ");
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < imagens.size(); indexDis++) {
-							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).getNome() + " Formato...=> "
+							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).nome + " Formato...=> "
 									+ imagens.get(indexDis).getFormatarImagem() + " Tamanho do arquivo...=> "
-									+ +imagens.get(indexDis).getTamanho() + "\n");
+									+ +imagens.get(indexDis).tamanho + "\n");
 							println("------------------------------------------------------------------");
 						}
-					}
-
-					if (opecaoDis == 3) {
-						println("Para alterar nome  do arquivo de imagem digite o seu id ");
-						int indexImg = ler.nextInt();
-
-						if (indexImg < imagens.size()) {
-							Imagem img = imagens.get(indexImg);
-							println("Digite um novo nome para: " + img.getNome() + "?");
-							String nome = ler.next();
-							img.setNome(nome);
-							println("Nome do documento de imagem alterado com sucesso");
-						} else {
-							println("Indice da imagem não encontrado");
-						}
-
-					}
-
-					if (opecaoDis == 4) {
-						println("Digite o id da imagem para ser removido");
-						int indexImg = ler.nextInt();
-
-						if (indexImg < imagens.size()) {
-							imagens.remove(indexImg);
-							println("Arquivo de imagem  removido com sucesso");
-						} else {
-							println("Indice de imagem não encontrado");
-						}
-
 					}
 
 				}
@@ -302,57 +273,27 @@ public class Main2 {
 					}
 
 					if (opecaoDis == 1) {
-
-						println("Nome do arquivo  de video: ");
-						String nome = ler.next();
-
-						println("Formato do arquivo: ");
-						String formato = ler.next();
-						println("tamanho do arquivo: ");
-						double tamanho = ler.nextDouble();
-						Video vid = new Video(nome, formato, tamanho);
+						Video vid = new Video();
+						println("Nome do Arquivo de Video: ");
+						vid.nome = ler.next();
 
 						videos.add(vid);
-						println("Arquivo  de video adicionado com sucesso: ");
+
+						println("Formato: ");
+						vid.formato = ler.next();
+						println("Tamanho Arquivo: ");
+						vid.tamanho = ler.nextDouble();
+						println("Arquivo de texto convertido para formato .txt disponivel pelo gerenciador de arquivo : ");
 
 					}
 
 					if (opecaoDis == 2) {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
-							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
+							println("Video[" + indexDis + "]: " + videos.get(indexDis).nome + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + "\n");
+									+ +videos.get(indexDis).tamanho + "\n");
 							println("------------------------------------------------------------------");
 						}
-					}
-					
-					if (opecaoDis == 3) {
-						println("Para alterar nome  do arquivo de video digite o seu id ");
-						int indexTex = ler.nextInt();
-
-						if (indexTex < videos.size()) {
-							Video vid = videos.get(indexTex);
-							println("Digite um novo nome para: " + vid.getNome() + "?");
-							String nome = ler.next();
-							vid.setNome(nome);
-							println("Nome do documento de video alterado com sucesso");
-						} else {
-							println("Indice do video não encontrado");
-						}
-
-					}
-
-					if (opecaoDis == 4) {
-						println("Digite o id do video para ser removido");
-						int indexVid= ler.nextInt();
-
-						if (indexVid < videos.size()) {
-							videos.remove(indexVid);
-							println("Arquivo de video  removido com sucesso");
-						} else {
-							println("Indice do video não encontrado");
-						}
-
 					}
 
 				}
