@@ -1,6 +1,6 @@
 package br.com.douglaskelczeski.file_explorer.entidades;
 
-public class Video {
+public abstract class Video {
 	// atributos
 	private String nome;
 	private String formato;
@@ -44,4 +44,6 @@ public class Video {
 		// TODO Auto-generated method stub
 		return formato = ".mkv";
 	}
+
+	public abstract String getType();
 }

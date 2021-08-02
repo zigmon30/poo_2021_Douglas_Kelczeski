@@ -10,8 +10,11 @@ public class Main {
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
 	static ArrayList<Documento> textos = new ArrayList<Documento>();
-	static ArrayList<Imagem> imagens = new ArrayList<Imagem>();
-	static ArrayList<Video> videos = new ArrayList<Video>(); // ################################################
+	static ArrayList<ImagemLivre> imagens = new ArrayList<ImagemLivre>();
+	static ArrayList<ImagemPrivada> imagensp = new ArrayList<ImagemPrivada>();
+	static ArrayList<VideoLivre> videos = new ArrayList<VideoLivre>();
+	static ArrayList<VideoPrivado> videosp = new ArrayList<VideoPrivado>();
+	// ################################################
 
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
@@ -248,7 +251,7 @@ public class Main {
 						String formato = ler.next();
 						println("tamanho do arquivo: ");
 						double tamanho = ler.nextDouble();
-						Imagem img = new Imagem(nome, formato, tamanho);
+						ImagemLivre img = new ImagemLivre(nome, formato, tamanho);
 
 						imagens.add(img);
 
@@ -258,7 +261,8 @@ public class Main {
 						for (int indexDis = 0; indexDis < imagens.size(); indexDis++) {
 							println("Imagem[" + indexDis + "]: " + imagens.get(indexDis).getNome() + " Formato...=> "
 									+ imagens.get(indexDis).getFormatarImagem() + " Tamanho do arquivo...=> "
-									+ +imagens.get(indexDis).getTamanho() + "\n");
+									+ imagens.get(indexDis).getTamanho() + " " + imagens.get(indexDis).getType()
+									+ "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
@@ -268,7 +272,7 @@ public class Main {
 						int indexImg = ler.nextInt();
 
 						if (indexImg < imagens.size()) {
-							Imagem img = imagens.get(indexImg);
+							ImagemLivre img = imagens.get(indexImg);
 							println("Digite um novo nome para: " + img.getNome() + "?");
 							String nome = ler.next();
 							img.setNome(nome);
@@ -285,6 +289,74 @@ public class Main {
 
 						if (indexImg < imagens.size()) {
 							imagens.remove(indexImg);
+							println("Arquivo de imagem  removido com sucesso");
+						} else {
+							println("Indice de imagem não encontrado");
+						}
+
+					}
+
+				}
+
+			}
+			if (opecao == 41) {
+				while (true) {
+					menuImagem();
+
+					int opecaoDis = ler.nextInt();
+
+					if (opecaoDis == 0) {
+						break;
+					}
+
+					if (opecaoDis == 1) {
+
+						println("Nome do arquivo  de imagem: ");
+						String nome = ler.next();
+						println("Senha do arquivo: ");
+						double senha = ler.nextDouble();
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						ImagemPrivada img = new ImagemPrivada(nome, formato, tamanho, senha);
+
+						imagensp.add(img);
+
+					}
+
+					if (opecaoDis == 2) {
+						for (int indexDis = 0; indexDis < imagensp.size(); indexDis++) {
+							println("Imagem[" + indexDis + "]: " + imagensp.get(indexDis).getNome() + " Formato...=> "
+									+ imagensp.get(indexDis).getFormatarImagem() + " Tamanho do arquivo...=> "
+									+ imagensp.get(indexDis).getTamanho() + " " + imagensp.get(indexDis).getType()
+									+ "\n");
+							println("------------------------------------------------------------------");
+						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do arquivo de imagem digite o seu id ");
+						int indexImg = ler.nextInt();
+
+						if (indexImg < imagensp.size()) {
+							ImagemPrivada img = imagensp.get(indexImg);
+							println("Digite um novo nome para: " + img.getNome() + "?");
+							String nome = ler.next();
+							img.setNome(nome);
+							println("Nome do documento de imagem alterado com sucesso");
+						} else {
+							println("Indice da imagem não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id da imagem para ser removido");
+						int indexImg = ler.nextInt();
+
+						if (indexImg < imagensp.size()) {
+							imagensp.remove(indexImg);
 							println("Arquivo de imagem  removido com sucesso");
 						} else {
 							println("Indice de imagem não encontrado");
@@ -314,7 +386,7 @@ public class Main {
 						String formato = ler.next();
 						println("tamanho do arquivo: ");
 						double tamanho = ler.nextDouble();
-						Video vid = new Video(nome, formato, tamanho);
+						VideoLivre vid = new VideoLivre(nome, formato, tamanho);
 
 						videos.add(vid);
 						println("Arquivo  de video adicionado com sucesso: ");
@@ -325,7 +397,8 @@ public class Main {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + "\n");
+									+ +videos.get(indexDis).getTamanho()  + " " + videos.get(indexDis).getType()
+									+ "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
@@ -335,7 +408,7 @@ public class Main {
 						int indexTex = ler.nextInt();
 
 						if (indexTex < videos.size()) {
-							Video vid = videos.get(indexTex);
+							VideoLivre vid = videos.get(indexTex);
 							println("Digite um novo nome para: " + vid.getNome() + "?");
 							String nome = ler.next();
 							vid.setNome(nome);
@@ -362,6 +435,76 @@ public class Main {
 				}
 
 			}
+			if (opecao == 51) {
+				while (true) {
+					menuVideo();
+
+					int opecaoDis = ler.nextInt();
+
+					if (opecaoDis == 0) {
+						break;
+					}
+
+					if (opecaoDis == 1) {
+
+						println("Nome do arquivo  de video: ");
+						String nome = ler.next();
+						println("Senha do arquivo: ");
+						double senha = ler.nextDouble();
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						VideoPrivado vid = new VideoPrivado(nome, formato, tamanho, senha);
+
+						videosp.add(vid);
+						println("Arquivo  de video privado adicionado com sucesso: ");
+
+					}
+
+					if (opecaoDis == 2) {
+						for (int indexDis = 0; indexDis < videosp.size(); indexDis++) {
+							println("Video[" + indexDis + "]: " + videosp.get(indexDis).getNome() + " Formato...=> "
+									+ videosp.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
+									+ +videosp.get(indexDis).getTamanho()  + " " + videosp.get(indexDis).getType()
+									+ "\n");
+							println("------------------------------------------------------------------");
+						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do arquivo de video digite o seu id ");
+						int indexTex = ler.nextInt();
+
+						if (indexTex < videosp.size()) {
+							VideoPrivado vid = videosp.get(indexTex);
+							println("Digite um novo nome para: " + vid.getNome() + "?");
+							String nome = ler.next();
+							vid.setNome(nome);
+							println("Nome do documento de video alterado com sucesso");
+						} else {
+							println("Indice do video não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id do video para ser removido");
+						int indexVid = ler.nextInt();
+
+						if (indexVid < videos.size()) {
+							videos.remove(indexVid);
+							println("Arquivo de video Privado removido com sucesso");
+						} else {
+							println("Indice do video não encontrado");
+						}
+
+					}
+
+				}
+
+			}
 		}
 		println("Você fechou o File Explorer \nAté a próxima ;)");
 
@@ -369,17 +512,19 @@ public class Main {
 
 	static void menu() {
 		println("");
-		println("-------------------------------------------");
-		println("Gerenciador de Arquivos File Explorer     -");
-		println("                                          -");
-		println("(0) para sair                             -");
-		println("(1) para dispositivos de Armazenamento    -");
-		println("(2) para Arquivos de Audio                -");
-		println("(3) para Documentos de Texto              -");
-		println("(4) para Arquivos de Imagem               -");
-		println("(5) para Arquivos de Video                -");
-		println("Digite sua opção:                         -");
-		println("-------------------------------------------");
+		println("--------------------------------------------------------");
+		println("Gerenciador de Arquivos File Explorer                  -");
+		println("                                                       -");
+		println("(0) para sair                                          -");
+		println("(1) para dispositivos de Armazenamento                 -");
+		println("(2) para Arquivos de Audio                             -");
+		println("(3) para Documentos de Texto                           -");
+		println("(4) para Arquivos de Imagem Livre                      -");
+		println("(41) para Arquivos de Imagem Privado                   -");
+		println("(5) para Arquivos de Video Livre                       -");
+		println("(51) para Arquivos de Video Privado                    -");
+		println("Digite sua opção:                                      -");
+		println("--------------------------------------------------------");
 
 	}
 

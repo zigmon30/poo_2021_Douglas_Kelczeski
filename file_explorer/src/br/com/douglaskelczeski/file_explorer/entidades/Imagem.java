@@ -1,6 +1,6 @@
 package br.com.douglaskelczeski.file_explorer.entidades;
 
-public class Imagem {
+public abstract class Imagem {
 	private String nome;
 	private	String formato;
 	private double tamanho;
@@ -43,4 +43,6 @@ public class Imagem {
 		// TODO Auto-generated method stub
 		return formato = ".jpg";
 	}
+	
+	public abstract String getType();
 }
