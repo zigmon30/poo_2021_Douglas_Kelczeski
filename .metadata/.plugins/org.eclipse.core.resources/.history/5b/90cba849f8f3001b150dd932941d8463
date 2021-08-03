@@ -7,7 +7,6 @@ import br.com.douglaskelczeski.file_explorer.entidades.*;
 
 public class Main {
 	static boolean imprime = true; // ################################################
-	static ArrayList<TodosOsArquivos> all = new ArrayList<TodosOsArquivos>();
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
 	static ArrayList<Documento> textos = new ArrayList<Documento>();
@@ -398,7 +397,8 @@ public class Main {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + " " + videos.get(indexDis).getType() + "\n");
+									+ +videos.get(indexDis).getTamanho()  + " " + videos.get(indexDis).getType()
+									+ "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
@@ -467,7 +467,7 @@ public class Main {
 						for (int indexDis = 0; indexDis < videosp.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videosp.get(indexDis).getNome() + " Formato...=> "
 									+ videosp.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videosp.get(indexDis).getTamanho() + " " + videosp.get(indexDis).getType()
+									+ +videosp.get(indexDis).getTamanho()  + " " + videosp.get(indexDis).getType()
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -505,10 +505,10 @@ public class Main {
 				}
 
 			}
-
-			if (opecao == 99) {
+			
+			if (opecao == 5) {
 				while (true) {
-					menuMostrarAll();
+					menuVideo();
 
 					int opecaoDis = ler.nextInt();
 
@@ -516,8 +516,59 @@ public class Main {
 						break;
 					}
 
+					if (opecaoDis == 1) {
+
+						println("Nome do arquivo  de video: ");
+						String nome = ler.next();
+
+						println("Formato do arquivo: ");
+						String formato = ler.next();
+						println("tamanho do arquivo: ");
+						double tamanho = ler.nextDouble();
+						VideoLivre vid = new VideoLivre(nome, formato, tamanho);
+
+						videos.add(vid);
+						println("Arquivo  de video adicionado com sucesso: ");
+
+					}
+
 					if (opecaoDis == 2) {
-						
+						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
+							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
+									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
+									+ +videos.get(indexDis).getTamanho()  + " " + videos.get(indexDis).getType()
+									+ "\n");
+							println("------------------------------------------------------------------");
+						}
+					}
+
+					if (opecaoDis == 3) {
+						println("Para alterar nome  do arquivo de video digite o seu id ");
+						int indexTex = ler.nextInt();
+
+						if (indexTex < videos.size()) {
+							VideoLivre vid = videos.get(indexTex);
+							println("Digite um novo nome para: " + vid.getNome() + "?");
+							String nome = ler.next();
+							vid.setNome(nome);
+							println("Nome do documento de video alterado com sucesso");
+						} else {
+							println("Indice do video não encontrado");
+						}
+
+					}
+
+					if (opecaoDis == 4) {
+						println("Digite o id do video para ser removido");
+						int indexVid = ler.nextInt();
+
+						if (indexVid < videos.size()) {
+							videos.remove(indexVid);
+							println("Arquivo de video  removido com sucesso");
+						} else {
+							println("Indice do video não encontrado");
+						}
+
 					}
 
 				}
@@ -599,14 +650,6 @@ public class Main {
 		println("(2) para listar os videos atualmente no sistema");
 		println("(3) para editar nome do video");
 		println("(4) para excluir video atualmente no sistema");
-		println("Digite sua opção:");
-	}
-
-	static void menuMostrarAll() {
-		println("");
-		println("---------------------");
-		println("(0) para Voltar ao Menu Principal");
-		println("(2) para listar todos os arquivos atualmente no sistema");
 		println("Digite sua opção:");
 	}
 

@@ -4,16 +4,11 @@ public class Audio {
 	private String nome;
 	private String formato;
 	private double tamanho;
-
+	
 	public Audio(String nome, String formato, double tamanho) {
 		super();
 		this.nome = nome;
 		this.formato = formato;
-		this.tamanho = tamanho;
-	}
-
-	public Audio(String nome, double tamanho) {
-		this.nome = nome;
 		this.tamanho = tamanho;
 	}
 
@@ -38,13 +33,13 @@ public class Audio {
 	}
 
 	public void setTamanho(double tamanho) {
-		if (tamanho <= 0)
-
+		if(tamanho <=0)
+			
 			return;
 		this.tamanho = tamanho;
 	}
 
 	public String getFormatarAudio() {
-		return formato = ".txt";
+		return  formato = ".txt";
 	}
 }

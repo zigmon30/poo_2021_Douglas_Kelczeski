@@ -12,6 +12,12 @@ public class Documento {
 		this.tamanho = tamanho;
 	}
 
+	public Documento(String nome, double tamanho) {
+		super();
+		this.nome = nome;
+		this.tamanho = tamanho;
+	}
+
 	public String getNome() {
 		return nome;
 	}

@@ -13,6 +13,11 @@ public abstract class Video {
 		this.formato = formato;
 		this.tamanho = tamanho;
 	}
+	
+	public Video(String nome, double tamanho) {
+		this.nome = nome;
+		this.tamanho = tamanho;
+	}
 
 //metodos getters and setters:
 	public String getNome() {

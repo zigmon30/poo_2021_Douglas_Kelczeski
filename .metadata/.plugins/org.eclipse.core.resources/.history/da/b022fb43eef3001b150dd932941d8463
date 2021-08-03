@@ -14,12 +14,6 @@ public class Dispositivo {
 		this.capacidadeUsada = capacidadeUsada;
 	}
 
-	public Dispositivo(String nome, double capacidade) {
-		this.nome = nome;
-		this.capacidade = capacidade;
-
-	}
-
 	// Comportamento da classe
 	public double getCapacidadeRestante() {
 		return capacidade - capacidadeUsada;

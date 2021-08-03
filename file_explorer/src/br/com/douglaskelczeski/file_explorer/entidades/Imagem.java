@@ -2,7 +2,7 @@ package br.com.douglaskelczeski.file_explorer.entidades;
 
 public abstract class Imagem {
 	private String nome;
-	private	String formato;
+	private String formato;
 	private double tamanho;
 
 	// metodo construtor
@@ -11,6 +11,11 @@ public abstract class Imagem {
 		super();
 		this.nome = nome;
 		this.formato = formato;
+		this.tamanho = tamanho;
+	}
+
+	public Imagem(String nome, double tamanho) {
+		this.nome = nome;
 		this.tamanho = tamanho;
 	}
 
@@ -43,6 +48,6 @@ public abstract class Imagem {
 		// TODO Auto-generated method stub
 		return formato = ".jpg";
 	}
-	
+
 	public abstract String getType();
 }

@@ -7,7 +7,6 @@ import br.com.douglaskelczeski.file_explorer.entidades.*;
 
 public class Main {
 	static boolean imprime = true; // ################################################
-	static ArrayList<TodosOsArquivos> all = new ArrayList<TodosOsArquivos>();
 	static ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	static ArrayList<Audio> audios = new ArrayList<Audio>(); // LISTAS DINAMICAS COM ARRAYLIST
 	static ArrayList<Documento> textos = new ArrayList<Documento>();
@@ -398,7 +397,8 @@ public class Main {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + " " + videos.get(indexDis).getType() + "\n");
+									+ +videos.get(indexDis).getTamanho()  + " " + videos.get(indexDis).getType()
+									+ "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
@@ -467,7 +467,7 @@ public class Main {
 						for (int indexDis = 0; indexDis < videosp.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videosp.get(indexDis).getNome() + " Formato...=> "
 									+ videosp.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videosp.get(indexDis).getTamanho() + " " + videosp.get(indexDis).getType()
+									+ +videosp.get(indexDis).getTamanho()  + " " + videosp.get(indexDis).getType()
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -505,7 +505,7 @@ public class Main {
 				}
 
 			}
-
+			
 			if (opecao == 99) {
 				while (true) {
 					menuMostrarAll();
@@ -517,8 +517,16 @@ public class Main {
 					}
 
 					if (opecaoDis == 2) {
-						
+						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
+							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
+									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
+									+ +videos.get(indexDis).getTamanho()  + " " + videos.get(indexDis).getType()
+									+ "\n");
+							println("------------------------------------------------------------------");
+						}
 					}
+
+								
 
 				}
 
@@ -601,12 +609,12 @@ public class Main {
 		println("(4) para excluir video atualmente no sistema");
 		println("Digite sua opção:");
 	}
-
+	
 	static void menuMostrarAll() {
 		println("");
 		println("---------------------");
 		println("(0) para Voltar ao Menu Principal");
-		println("(2) para listar todos os arquivos atualmente no sistema");
+		println("(2) para listar os videos atualmente no sistema");
 		println("Digite sua opção:");
 	}
 

@@ -1,22 +1,20 @@
 package br.com.douglaskelczeski.file_explorer.entidades;
 
-public class Audio {
+public abstract class Video {
+	// atributos
 	private String nome;
 	private String formato;
 	private double tamanho;
 
-	public Audio(String nome, String formato, double tamanho) {
+	// metodo construtor
+	public Video(String nome, String formato, double tamanho) {
 		super();
 		this.nome = nome;
 		this.formato = formato;
 		this.tamanho = tamanho;
 	}
 
-	public Audio(String nome, double tamanho) {
-		this.nome = nome;
-		this.tamanho = tamanho;
-	}
-
+//metodos getters and setters:
 	public String getNome() {
 		return nome;
 	}
@@ -38,13 +36,14 @@ public class Audio {
 	}
 
 	public void setTamanho(double tamanho) {
-		if (tamanho <= 0)
-
-			return;
 		this.tamanho = tamanho;
 	}
 
-	public String getFormatarAudio() {
-		return formato = ".txt";
+	// comportamento da classe
+	public String getFormatarVideo() {
+		// TODO Auto-generated method stub
+		return formato = ".mkv";
 	}
+
+	public abstract String getType();
 }

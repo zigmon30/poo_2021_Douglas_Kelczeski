@@ -398,7 +398,8 @@ public class Main {
 						for (int indexDis = 0; indexDis < videos.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videos.get(indexDis).getNome() + " Formato...=> "
 									+ videos.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videos.get(indexDis).getTamanho() + " " + videos.get(indexDis).getType() + "\n");
+									+ +videos.get(indexDis).getTamanho()  + " " + videos.get(indexDis).getType()
+									+ "\n");
 							println("------------------------------------------------------------------");
 						}
 					}
@@ -467,7 +468,7 @@ public class Main {
 						for (int indexDis = 0; indexDis < videosp.size(); indexDis++) {
 							println("Video[" + indexDis + "]: " + videosp.get(indexDis).getNome() + " Formato...=> "
 									+ videosp.get(indexDis).getFormatarVideo() + " Tamanho do arquivo...=> "
-									+ +videosp.get(indexDis).getTamanho() + " " + videosp.get(indexDis).getType()
+									+ +videosp.get(indexDis).getTamanho()  + " " + videosp.get(indexDis).getType()
 									+ "\n");
 							println("------------------------------------------------------------------");
 						}
@@ -505,7 +506,7 @@ public class Main {
 				}
 
 			}
-
+			
 			if (opecao == 99) {
 				while (true) {
 					menuMostrarAll();
@@ -517,8 +518,14 @@ public class Main {
 					}
 
 					if (opecaoDis == 2) {
-						
+						for (int indexDis = 0; indexDis < all.size(); indexDis++) {
+							println("Video[" + indexDis + "]: " + all.get(indexDis).getVideosp() 
+									+ "\n");
+							println("------------------------------------------------------------------");
+						}
 					}
+
+								
 
 				}
 
@@ -601,7 +608,7 @@ public class Main {
 		println("(4) para excluir video atualmente no sistema");
 		println("Digite sua opção:");
 	}
-
+	
 	static void menuMostrarAll() {
 		println("");
 		println("---------------------");

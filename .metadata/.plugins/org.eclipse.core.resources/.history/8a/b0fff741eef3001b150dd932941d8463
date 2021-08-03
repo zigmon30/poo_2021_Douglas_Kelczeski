@@ -1,19 +1,14 @@
 package br.com.douglaskelczeski.file_explorer.entidades;
 
-public class Audio {
+public class Documento {
 	private String nome;
 	private String formato;
 	private double tamanho;
 
-	public Audio(String nome, String formato, double tamanho) {
+	public Documento(String nome, String formato, double tamanho) {
 		super();
 		this.nome = nome;
 		this.formato = formato;
-		this.tamanho = tamanho;
-	}
-
-	public Audio(String nome, double tamanho) {
-		this.nome = nome;
 		this.tamanho = tamanho;
 	}
 
@@ -38,13 +33,10 @@ public class Audio {
 	}
 
 	public void setTamanho(double tamanho) {
-		if (tamanho <= 0)
-
-			return;
 		this.tamanho = tamanho;
 	}
 
-	public String getFormatarAudio() {
+	public String getFormatarDocumento() {
 		return formato = ".txt";
 	}
 }

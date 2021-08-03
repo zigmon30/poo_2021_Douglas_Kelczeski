@@ -517,7 +517,17 @@ public class Main {
 					}
 
 					if (opecaoDis == 2) {
-						
+						for (int indexDis = 0; indexDis < all.size(); indexDis++) {
+							println("Video[" + indexDis + "]: " + all.get(indexDis).getVideos()
+
+									+ "\n");
+							println("Video[" + indexDis + "]: " + all.get(indexDis).getVideosp() + "\n");
+							println("Video[" + indexDis + "]: " + all.get(indexDis).getImagens()
+
+									+ "\n");
+							println("Video[" + indexDis + "]: " + all.get(indexDis).getImagensp() + "\n");
+							println("------------------------------------------------------------------");
+						}
 					}
 
 				}
